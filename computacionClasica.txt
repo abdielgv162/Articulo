@@ -1,0 +1,31 @@
+\documentclass[11 pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Bases de la computación clásica}
+\author{Abdiel Guerrero V. / Victor García }
+\date{November 2020}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    Antes de introducirnos en el mundo de la computación cuántica sería bueno que conozcamos un poco de los conceptos básicos de la computación clásica, los cuales nos despejaron el camino para llegar a la revolución de la información que tenemos hoy en día.
+\end{abstract}
+\section*{Un mundo de bits}
+Seguramente has escuchado muchas veces que los computadores funcionan procesando la información a través de bits, pero ¿qué es exactamente un bit? Para contestar a esta interrogante primero recordemos lo que es un sistema de numeración. 
+
+Un sistema de numeración viene de la necesidad del ser humano de \textit{contar} y es simplemente, una manera de  \textit{representar cantidades} a través del uso de símbolos, por ejemplo, nosotros utilizamos el \textit{sistema decimal} el cual recibe su nombre ya que disponemos de 10 símbolos (del $0$ al $9$) y a partir de una combinación de estos podemos construir cualquier cantidad que queramos representar.
+
+Ahora, ¿que tiene que ver esto con la computación? Bueno, pensemos en el reto al que se enfrentaron los pioneros en electrónica y en computación  al tratar de codificar las cantidades que estamos acostumbrados a representar en nuestro día a día. ¿De que manera se podría construir un dispositivo capaz de detectar 10 dígitos distintos?, ¿qué materiales nos permitirían llevar esa abstracción matemática a dispositivos de la vida real?
+
+De haber elegido este camino quizá no hubiésemos llegado a ningún lugar ya que, nuestro primer reto a resolver para codificar información en un dispositivo estaría en encontrar la manera de que este  detecte que esta presente o no una cierta cantidad física medible y, como sabemos, el principio de la electrónica y de la computación se basa en la detección y control de la corriente eléctrica que circula a través de un material conductor. De aquí es donde aparece la necesidad de utilizar un sistema de numeración que tenga dígitos que solo puedan tomar 2 valores distintos ($0$ y $1$), representando la detección o no detección de una corriente eléctrica; y así es como llegamos al uso del famoso sistema binario en el cual, en su implementación en electrónica, le llamaremos \textbf{bit} a cada uno de estos dígitos binarios que pueden tomar uno de dos posibles estados, 0 o 1, verdadero o falso, etc. De esta manera los bits se convertirán en nuestra unidad fundamental de información dentro de la electrónica y la computación.
+
+
+
+\end{document}
