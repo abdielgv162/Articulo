@@ -1,7 +1,5 @@
 \documentclass[11 pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
-\usepackage[utf8]{inputenc}
 \usepackage{graphics}
 \usepackage{graphicx}
 \usepackage[table,xcdraw]{xcolor}
@@ -15,7 +13,8 @@
 \maketitle
 
 \begin{abstract}
-    Antes de introducirnos en el mundo de la computación cuántica sería bueno que conozcamos un poco de los conceptos básicos de la computación clásica, los cuales nos despejaron el camino para llegar a la revolución de la información que tenemos hoy en día.
+    La computación cuántica es un campo que esta en constante crecimiento y cada vez observamos a nuevos entes tecnológicos unirse a la carrera por la supremacía cuántica, además de traer consigo una enorme oleada de jóvenes interesados por este campo. Por ello, comenzaremos nuestra aventura en esta área del conocimiento explicando algunos de los conceptos básicos de nuestra ya conocida \textit{computación clásica}, de manera que nos coloquemos en el mismo punto de partida en el cual sepamos qué es un bit, cómo hace un computador para interpretarlos, qué es una memoria y como funciona, etc. Tocando cada uno de los puntos esenciales que sirvieron como antecedentes para dar paso a la revolución de la información en la que vivimos hoy en día y, ahora si, adentrarnos dentro del nuevo mundo de la computación cuántica.
+    
 \end{abstract}
 \section*{Un mundo de bits}
 Seguramente has escuchado muchas veces que los computadores funcionan procesando la información a través de bits, pero ¿qué es exactamente un bit? Para contestar a esta interrogante primero recordemos lo que es un sistema de numeración. 
