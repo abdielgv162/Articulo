@@ -1,3 +1,4 @@
+
 \documentclass[11 pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphics}
@@ -32,7 +33,7 @@ Bueno, para nuestra suerte ya se había desarrollado lo que hoy en día conocemo
 
 Por ahora nos, concentraremos en sus aplicaciones en electrónica donde tenemos compuertas muy conocidas como la AND, que realiza una conjunción lógica o, en su equivalente en español, una preposición ``Y'' ; la compuerta OR que realiza una disyunción lógica o un equivalente a nuestra preposición ``O'', la compuerta NOT que implementa una negación lógica, entre otras.
 
-De todas las compuertas lógicas existe una con una propiedad muy particular, siendo esta la compuerta NAND, la cual que se puede visualizar como una compuerta AND seguida de una compuerta NOT o sea, una AND con las salidas invertidas. Podrás preguntarte, ¿qué hace tan interesante a esta compuerta? Bueno, resulta que tiene la maravillosa propiedad de que a partir de una combinación de NAND's podemos construir cualquiera de las otras compuertas lógicas. A esta propiedad que posee la NAND se le suele llamar ``Functional completeness'' o de ``Completitud funcional''. Lo que implica que podremos construir cualquier función booleana utilizando únicamente compuertas NAND. Y eso no es todo, también implica que solo tenemos que encontrar la forma de construir un dispositivo físico que logre replicar el comportamiento de una NAND para, posteriormente, replicar cualquier función booleana en nuestros dispositivos.
+De todas las compuertas lógicas existe una con una propiedad muy particular, siendo esta la compuerta \textit{NAND}, la cual se puede visualizar como una compuerta AND seguida de una compuerta NOT o sea, una AND con las salidas invertidas. Podrás preguntarte, ¿qué hace tan interesante a esta compuerta? Bueno, resulta que tiene la maravillosa propiedad de que a partir de una combinación de varias de estas podemos construir cualquiera de las otras compuertas lógicas. A esta propiedad se le suele llamar ``Functional completeness'' o de ``Completitud funcional''. Lo que implica que podremos construir cualquier función booleana utilizando únicamente esta compuerta. Y eso no es todo, también implica que solo tenemos que encontrar la forma de construir un dispositivo físico que logre replicar su comportamiento para, posteriormente, replicar cualquier función booleana en nuestros dispositivos.
 
 \begin{figure}[h!]
 \centering
