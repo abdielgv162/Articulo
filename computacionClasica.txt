@@ -28,6 +28,17 @@ De haber elegido este camino quizá no hubiésemos llegado a ningún lugar ya qu
 \section*{Manipulando bits}
 Ya sabemos como representar la información utilizando bits, pero ahora necesitaremos encontrar la forma de manipular esta información. En este punto podemos preguntarnos, ¿Hay una manera de llevar nuestros conceptos de lógica proposicional a un equivalente en el mundo de los bits?
 
-Bueno, para nuestra suerte ya se había desarrollado lo que hoy en día conocemos como álgebra de Boole, un método propuesto por el matemático George Boole que permite trabajar de manera algebraica con expresiones de la lógica proposicional y es gracias a esto que, posteriormente, pudimos introducir estos conceptos a nuestros circuitos eléctricos utilizando nuevos dispositivos llamados \textit{compuertas lógicas}. Estos son dispositivos que realizan una función booleana como una suma,  multiplicación, invertir el valor de un bit, entre otros. A pesar de ser un concepto muy adoptado en la electrónica no es exclusivo de esta, ya que también podríamos hacer una implementación mecánica, hidráulica o neumática; el reto de esto es encontrar los materiales o dispositivos físicos que nos permitan replicar ese comportamiento. 
+Bueno, para nuestra suerte ya se había desarrollado lo que hoy en día conocemos como álgebra de Boole, un método propuesto por el matemático George Boole que permite trabajar de manera algebraica con expresiones de la lógica proposicional y es gracias a esto que, posteriormente, pudimos introducir estos conceptos a nuestros circuitos eléctricos utilizando nuevos dispositivos llamados \textit{compuertas lógicas}. Estos son dispositivos que realizan una función booleana u otra función como efectuar una suma,  multiplicación, invertir el valor de un bit, entre otros. A pesar de ser un concepto muy adoptado en la electrónica no es exclusivo de esta, ya que también podríamos hacer una implementación mecánica, hidráulica o neumática; el reto de esto es encontrar los materiales o dispositivos físicos que nos permitan replicar ese comportamiento. 
 
+Por ahora nos, concentraremos en sus aplicaciones en electrónica donde tenemos compuertas muy conocidas como la AND, que realiza una conjunción lógica o, en su equivalente en español, una preposición ``Y'' ; la compuerta OR que realiza una disyunción lógica o un equivalente a nuestra preposición ``O'', la compuerta NOT que implementa una negación lógica, entre otras.
+
+De todas las compuertas lógicas existe una con una propiedad muy particular, siendo esta la compuerta NAND, la cual que se puede visualizar como una compuerta AND seguida de una compuerta NOT o sea, una AND con las salidas invertidas. Podrás preguntarte, ¿qué hace tan interesante a esta compuerta? Bueno, resulta que tiene la maravillosa propiedad de que a partir de una combinación de NAND's podemos construir cualquiera de las otras compuertas lógicas. A esta propiedad que posee la NAND se le suele llamar ``Functional completeness'' o de ``Completitud funcional''. Lo que implica que podremos construir cualquier función booleana utilizando únicamente compuertas NAND. Y eso no es todo, también implica que solo tenemos que encontrar la forma de construir un dispositivo físico que logre replicar el comportamiento de una NAND para, posteriormente, construir un circuito que represente cualquier función booleana.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[%
+	width=.8 \textwidth]{NAND.jpg}
+\caption{\label{fig:NAND}
+Construcción del resto de compuertas lógicas utilizando compuertas NAND.}
+\end{figure}
 \end{document}
