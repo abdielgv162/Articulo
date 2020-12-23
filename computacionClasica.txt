@@ -31,23 +31,24 @@ Ya sabemos como representar la información utilizando bits, pero ahora necesita
 Bueno, para nuestra suerte ya se había desarrollado lo que hoy en día conocemos como álgebra de Boole, un método que permite trabajar de manera algebraica con expresiones lógicas y es gracias a esto que, posteriormente, pudimos introducir estos conceptos a nuestros circuitos eléctricos utilizando nuevos dispositivos llamados \textit{compuertas lógicas}. Estos son dispositivos que realizan una función lógica u otra función como efectuar una suma,  multiplicar, invertir el valor de entrada, entre otros. A pesar de ser un concepto muy adoptado en la electrónica no es exclusivo de esta, ya que también podríamos hacer una implementación mecánica, hidráulica o neumática; el reto de esto es encontrar los materiales o dispositivos físicos que nos permitan replicar ese comportamiento. 
 
 Por ahora, nos concentraremos en sus aplicaciones en electrónica. Tenemos compuertas muy conocidas como la AND, la cual realiza una conjunción lógica o, el equivalente en el español, el uso de la preposición ``Y''; la compuerta OR que realiza una disyunción lógica o un equivalente a nuestra preposición ``O'', la compuerta NOT que implementa una negación lógica, entre otras.
-
+\newpage
 De todas las compuertas lógicas existe una con una propiedad muy particular, siendo esta la compuerta \textit{NAND}, la cual se puede visualizar como una compuerta AND seguida de una compuerta NOT, o sea, una AND con las salidas invertidas. Podrás preguntarte, ¿qué hace tan interesante a esta compuerta? Bueno, resulta que tiene la maravillosa propiedad de que a partir de una combinación de varias de estas podemos construir cualquiera de las otras compuertas lógicas. A esta propiedad se le suele llamar ``Functional completeness'' o de ``Completitud funcional''. Lo que implica que podremos construir cualquier función lógica utilizando únicamente esta compuerta. Y eso no es todo, también implica que solo tenemos que encontrar la forma de construir un dispositivo físico que logre replicar su comportamiento para, posteriormente, replicar cualquier función lógica que imaginemos dentro nuestros dispositivos.
 
 \begin{figure}[h!]
-
 \centering
 \includegraphics[%
 	width=.8 \textwidth]{NAND.jpg}
 \caption{\label{fig:NAND}
 Construcción del resto de compuertas lógicas utilizando compuertas NAND.}
 \end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section*{Construyendo operaciones matemáticas}
 Podríamos decir que encontramos la manera de codificar el concepto de \textit{número} y los conceptos básicos de lógica dentro de nuestros circuitos. Ahora, podemos pensar en dar el siguiente paso para llevar nuestras abstracciones matemáticas al mundo digital, en concreto, en trasladar los conceptos básicos de la aritmética como la suma, resta, multiplicación y división. 
 
-Gracias al esfuerzo de todas las personas que trabajaron en esta área se lograron desarrollar conceptos como el de \textit{un medio sumador, sumador completo, restador, etc.} Los cuales eran circuitos construidos a través de compuertas lógicas que permitían replicar el comportamiento de nuestras operaciones aritméticas básicas.
+Gracias al esfuerzo de todas las personas que trabajaron en esta área se lograron desarrollar conceptos como el de \textit{un medio sumador, sumador completo, restador, etc.} Los cuales eran circuitos construidos a través de compuertas lógicas que permitían replicar comportamientos más complejos, entre ellos el de nuestras operaciones aritméticas básicas.
+
 \begin{figure}[h!]
 \centering
 \includegraphics[%
@@ -60,15 +61,36 @@ Construcción de un \textit{medio sumador} usando compuertas lógicas.}
 Construcción de un \textit{medio restador} utilizando compuertas lógicas.}
 \end{figure}
 
-Hecho esto, ya podíamos operar con bits de una manera muy similar a como operamos con números. Estabamos haciendo operaciones matemáticas manipulando la corriente eléctrica o, en su nivel más fundamental, manipulando electrones.
+Hecho esto, ya podemos operar con bits de una manera muy similar a como operamos con números. Estamos haciendo operaciones matemáticas manipulando la corriente eléctrica o, en su nivel más fundamental, manipulando electrones.
 
 Después de esto, surgió la idea de crear un circuito que se dedicara únicamente de realizar estas operaciones lógicas y matemáticas, funcionando como la pieza fundamental de nuestro ``cerebro'' electrónico. Y a este circuito se le dio el nombre de \textbf{ALU} (por sus siglas en inglés de Arithmetic Logic Unit).
-
-* Hablar de CU
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Memorizando bits}
-Espacio para hablar de registros
+Hasta este punto ya disponemos de los elementos básicos que nos permitirán refinar nuestros circuitos a tal grado de que ya podamos darle solución a una gran cantidad de problemas, permitiéndonos hacer nuestros primeros cómputos de manera digital, pero seguimos teniendo un inconveniente y es que, aún no tenemos un dispositivo capaz de mantener o \textit{almacenar} esa información en algún sitio. Producto de esa búsqueda se desarrolló lo que hoy en día conocemos como \textit{flip-flop} o biestable, pero antes de hablar de ellos expliquemos un concepto muy importante para entenderlos, el concepto de \textit{clock} o \textit{señal de reloj}.
 
+Un \textit{clock} sigue siendo una señal binaria que solo puede tener un valor de 0 o 1, pero con la peculiaridad de que, teóricamente, cambiará sus estados de 0 a 1 y de 1 a 0 \textit{de forma periódica}  y realizando el cambio de forma instantánea. Es decir, imaginemos que queremos que nuestra señal se active en 1 siempre y cuando, la señal rebase una barrera mínima de 5 volts, entonces, si tenemos 4.9 volts o menos recibiremos un 0 y si tenemos 5 volts o más recibiremos un 1. Ahora, imaginemos que nuestra señal cambiará de estado cada segundo, por lo que decimos que tenemos un ancho de pulso de 1 segundo, ya que es lo que dura cada estado. Después, podemos decir que tiene un periodo de 2 segundos, es decir, tarda 2 segundos en volver al mismo estado.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[%
+	width=.65 \textwidth]{clock.png}
+\caption{\label{fig:clock}
+Representación de una señal de reloj.}
+\end{figure}
+
+A las transiciones de estados de 0 a 1 le llamaremos \textit{flanco de subida} y a las transiciones de 1 a 0 le llamaremos \textit{flanco de bajada}, posteriormente podremos configurar nuestros dispositivos para que funcionen detectando una u otra.
+
+Ahora sí, podemos pasar a explicar qué son los \textit{flip-flop's}. Estos siguen siendo dispositivos construidos a partir de compuertas lógicas que tienen un detalle especial ya que recibe una retroalimentación en su construcción interna lo que condiciona sus salidas y mantiene su valor anterior. Veamos primero el caso más sencillo que es el flip flop \textit{tipo D}, este flip flop es muy sencillo, pero muy importante ya que a partir de este concepto se construyeron otros más complejos. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[%
+	width=.65 \textwidth]{typeD.png}
+\caption{\label{fig:typeD}
+Construcción de un flip-flop tipo D.}
+\end{figure}
+
+Tenemos 2 entradas, una para nuestro dato (\textit{D}) y otra para la señal de reloj (\textit{CK}). El funcionamiento, que podemos leer de su tabla de verdad, es el siguiente; si la señal de reloj no esta activada, no importa que este en la entrada ya que todo permanecerá sin cambios y en el caso de recibir una señal de reloj, ``copia'' el valor de D en Q. A pesar de parecer un poco trivial el funcionamiento de este dispositivo realmente tenemos un concepto muy importante frente a nuestros ojos, y es que, mientras la señal de reloj no se active de nuevo, mantendremos el estado anterior, es decir, ¡estamos memorizando el dato anterior!
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
