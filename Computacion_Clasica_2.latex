@@ -1,0 +1,59 @@
+\documentclass[11 pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Bases de la computación clásica}
+\author{Abdiel Guerrero V. / Victor García }
+\date{November 2020}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+\section*{Cofres de bits}
+En este momento creemos que es correcto sobre lo que son las memorias que manejamos día a día en un computador e iniciamos con  una pregunta sencilla para los lectores. ¿Sabes cómo se guarda la información en un ordenador?
+
+\section*{Diferentes tipos de cofres}
+Ya sean llamadas memorias RAM, ROM o Cache, cada una tiene una funcionalidad que las hace indispensable para la realización de las tareas esenciales, así desde guardar una imagen o mantener las aplicaciones en segundo plano, cada una funciona de una manera diferente.\\
+
+Pongamos por ejemplo la RAM, técnicamente se le llama como: “Memoria de acceso aleatorio” y es utilizada como memoria de trabajo donde se cargan las instrucciones que ejecuta el procesador, pero ¿Esto qué quiere decir? En una manera sencilla es que cuando decidas realizar alguna acción en la computadora como crear o editar un documento en algún procesador de texto como Word o Pages, esta memoria guardara cada pagina, cada palabra y cada bit creados en un archivo temporal.\\
+
+Esta información no es permanente, ya que si el equipo de computo se apaga en medio de la creación o edición de tu posible ensayo o tu tarea de calculo, muy probablemente perderás esta información. ¿Porque? Bueno debido a que no has guardado el documento debidamente como archivo en el disco duro o en el disco de estado solido (para los mas actualizados).\\
+
+En resumen, todas las acciones que realices con aplicaciones, programas o funciones se ejecutan y se guardan en la RAM, para que puedas procesar y editar esta información con facilidad, aunque depende del limite de esta memoria, ya que entre mas memoria RAM, podrás ejecutar mas instrucciones y aun mas complejas, por eso es una parte importante en la hora de comprar un computador o saber para que tipo de actividades necesitamos cierta cantidad de almacenamiento RAM. \\
+
+Así que pongamos fácil: Sin una memoria RAM, no llegaras muy lejos al encender tu computador.\\
+
+Ahora pasemos a otro tipo de cofre de bits, a as memorias ROM, ya que seguro las habrás escuchado pero, sabemos ¿para qué funciona o para que sirven? Bueno en una forma sencilla de decirlo, son todos los datos que no pueden ser modificados por el usuario común, ya que sus siglas lo dicen literalmente ROM Read Only Memory (“Memoria de Solo Lectura”). Por lo general aquí se guarda lo que se conoce en informática como Bios, en algunas maquinas ya se llegan a utilizar memorias flash en esta parte.\\
+
+Pero por lo general, los datos introducidos en este tipo de memorias son solo de lectura, archivos, programas o información que se mantendrá y ejecutara en la computadora de manera casi permanente, ya que no requieren modificaciones alguna en el ciclo de vida de la computadora, de igual manera podemos encontrar operadores de bajo nivel como solo los operadores matemáticos y lógicos.\\
+
+Y como no podía faltar ahora hablaremos de la famosa memoria cache, ya que algunas ocasiones se leen en varios sitios web que borrándola, resuelven varios problemas en navegadores web o que se puede liberar demasiado espacio en algunos dispositivos si es borrada.\\
+
+También conocida como memoria de acceso rápido, esta almacena temporalmente los datos de forma auxiliar, esto no significa que sea como la memoria RAM, ya que a diferencia esta opera de manera similar a la Memoria del CPU, pero a velocidades mayores y de igual manera esta se encuentra alternada entre la memoria principal y la RAM, esto hace que los datos sean almacenados en una parte donde si se requiere, se pueden consultar después, al estar guardados estos datos hace que algunas operaciones como servicios web, sean mas rápido, ya que no tienen que estar pidiendo los datos a cada momento, sino que los recuperan de la memoria cache.\\
+
+
+Esto en ventaja hace que las cargas sean mas rápidas y sucesivas y que se ahorre en el ancho de banda, aunque en algunas ocaciones sea una misma desventaja, ya que existen servicios que solo utilizamos una vez, lo que ocasiona que estos datos se vayan acumulando y creen después de un largo uso de vida del computador, algunos problemas como rendimiento de nuevos servicios web que necesitemos o de almacenamiento en general.\\
+
+Por lo que en algunas ocaciones se recomienda borrarla estos datos, ya que no afectan el almacenamiento en el disco duro y no afecta de manera directa a los archivos, ya que si se vuelve a solicitar un servicio, este volverá a guardarse en la memoria cache.\\
+
+\section*{Carreteras de bits}
+Ahora pasaremos a otro elemento importante para la arquitectura de las computadoras clásicas, lo que son los buses o canales, que son los que transportarán nuestros bits por los diferentes componentes del computador, puede estar conformado por cables o pistas en los circuitos impresos, algunos construidos junto con circuitos integrados para poder hacer mas eficaz su transporte.\\
+
+De este tipo de carreteras de bits nos encontramos con dos diferentes tipos, los primeros que transportaran cada bit uno por uno, como si fuera una calle de un solo carril, el cual solo tendrá una dirección y este es llamado bus en serie.\\
+
+El otro tipo es donde los bits pueden viajar simultáneamente como si en varios carriles se trataran, ya que ejemplo mas clásico es el transporte de los 8 bits.\\
+
+Ahora después de ver estos dos tipos de buses, pasaremos a ver cómo se clasifican según sus funciones.
+Nuestras primeras carreteras a ver, serán las que comparten la mayoría de los componentes y que proveen del uso y del acceso principal de nuestros bits, ya que están esparcidas por todos los componentes desde nuestro CPU hasta la pantalla por la cual vemos las acciones que realizamos con los mismos.\\
+
+Los buses de control, nos permiten mandar las señales control, que datan las ordenes a nuestro sistema, este guiara a los mismos bits de manera ordenada para que no existan las colisiones de información dentro de nuestro sistema y que cada bit vaya a donde se requiera.\\
+
+Nuestras segundas carreteras serán los buses de direcciones, de la cual nos ayudaremos haciéndolo con un pequeño ejemplo de las memorias RAM, ya que esta esta conformada por celdas, que a pesar de que sea poco creíble, pero una tiene una dirección propia, conformada por una serie de números. Esto es muy útil ya que nuestro bus de direcciones se encargara de establecer la dirección de memoria a cada bit que este transitando.\\
+
+Técnicamente son un conjunto de lineas eléctricas que establecen una dirección, pero que de igual manera depende de la cantidad de bits que se están transportando es la forma en que se les dará una dirección para que viajen y sean almacenados. También debemos mencionar que existe una linea de control, el cual nos señala cuando una dirección este disponible y pueda asignarse a otros bits.\\
+
+Y por ultimo tenemos las carreteras que manejan los periféricos apropiadamente, el bus de datos es que que nos ayuda a transportan la información convertida a nuestros ya conocidos bits entre los dispositivos del hardware como el teclado, el mouse, la impresora, monitor y que igual transporta nuestra información de almacenamiento directo hacia el disco duro o cualquier memoria de almacenamiento.\\
+\end{document}
