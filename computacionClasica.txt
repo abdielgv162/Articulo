@@ -30,24 +30,26 @@ Ya sabemos como representar la información utilizando bits, pero ahora necesita
 
 Bueno, para nuestra suerte ya se había desarrollado lo que hoy en día conocemos como álgebra de Boole, un método que permite trabajar de manera algebraica con expresiones lógicas y es gracias a esto que, posteriormente, pudimos introducir estos conceptos a nuestros circuitos eléctricos utilizando nuevos dispositivos llamados \textit{compuertas lógicas}. Estos son dispositivos que realizan una función lógica u otra función como efectuar una suma,  multiplicar, invertir el valor de entrada, entre otros. A pesar de ser un concepto muy adoptado en la electrónica no es exclusivo de esta, ya que también podríamos hacer una implementación mecánica, hidráulica o neumática; el reto de esto es encontrar los materiales o dispositivos físicos que nos permitan replicar ese comportamiento. 
 
-Por ahora, nos concentraremos en sus aplicaciones en electrónica. Tenemos compuertas muy conocidas como la AND, la cual realiza una conjunción lógica o, el equivalente en el español, el uso de la preposición ``Y''; la compuerta OR que realiza una disyunción lógica o un equivalente a nuestra preposición ``O'', la compuerta NOT que implementa una negación lógica, entre otras.
-\newpage
-De todas las compuertas lógicas existe una con una propiedad muy particular, siendo esta la compuerta \textit{NAND}, la cual se puede visualizar como una compuerta AND seguida de una compuerta NOT, o sea, una AND con las salidas invertidas. Podrás preguntarte, ¿qué hace tan interesante a esta compuerta? Bueno, resulta que tiene la maravillosa propiedad de que a partir de una combinación de varias de estas podemos construir cualquiera de las otras compuertas lógicas. A esta propiedad se le suele llamar ``Functional completeness'' o de ``Completitud funcional''. Lo que implica que podremos construir cualquier función lógica utilizando únicamente esta compuerta. Y eso no es todo, también implica que solo tenemos que encontrar la forma de construir un dispositivo físico que logre replicar su comportamiento para, posteriormente, replicar cualquier función lógica que imaginemos dentro nuestros dispositivos.
+Por ahora, nos concentraremos en sus aplicaciones en electrónica. Tenemos compuertas muy conocidas como la AND, la cual realiza una conjunción lógica o, el equivalente en el español, el uso de la preposición ``Y''; la compuerta OR que realiza una disyunción lógica o un equivalente a nuestra preposición ``O'', la compuerta NOT que invierte el valor de entrada, entre otras.
+
+De todas las compuertas lógicas existe una con una propiedad muy particular, siendo esta la compuerta \textbf{NAND}, la cual se puede visualizar como una compuerta AND seguida de una compuerta NOT, o sea, una AND con las salidas invertidas. Podrás preguntarte, ¿qué hace tan interesante a esta compuerta? Bueno, resulta que tiene la maravillosa propiedad de que a partir de una combinación de varias de estas podemos construir cualquiera de las otras compuertas lógicas. A esta propiedad se le suele llamar ``Functional completeness'' o de ``Completitud funcional''. Lo que implica que podremos construir cualquier función lógica utilizando únicamente esta compuerta. Y eso no es todo, también implica que solo tenemos que encontrar la forma de construir un dispositivo físico que logre replicar su comportamiento para, posteriormente, replicar dentro de nuestros dispositivos cualquier función lógica que imaginemos.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[%
-	width=.8 \textwidth]{NAND.jpg}
+	width=.65 \textwidth]{NAND.jpg}
 \caption{\label{fig:NAND}
 Construcción del resto de compuertas lógicas utilizando compuertas NAND.}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+
 \section*{Construyendo operaciones matemáticas}
 Podríamos decir que encontramos la manera de codificar el concepto de \textit{número} y los conceptos básicos de lógica dentro de nuestros circuitos. Ahora, podemos pensar en dar el siguiente paso para llevar nuestras abstracciones matemáticas al mundo digital, en concreto, en trasladar los conceptos básicos de la aritmética como la suma, resta, multiplicación y división. 
 
-Gracias al esfuerzo de todas las personas que trabajaron en esta área se lograron desarrollar conceptos como el de \textit{un medio sumador, sumador completo, restador, etc.} Los cuales eran circuitos construidos a través de compuertas lógicas que permitían replicar comportamientos más complejos, entre ellos el de nuestras operaciones aritméticas básicas.
+Gracias al esfuerzo de todas las personas que trabajaron en esta área se lograron desarrollar conceptos como el de \textit{sumador, restador, decodificador, etc.} Los cuales eran circuitos construidos a través de compuertas lógicas que permitían replicar comportamientos más complejos, entre ellos el de nuestras operaciones aritméticas básicas.
+
+En un sumador por ejemplo, se trata de replicar el comportamiento de una suma binaria en principio de 2 bits donde, para los casos donde uno de los bits sea 0 y el otro 1 el resultado de nuestra suma será 1, pero en el caso donde ambos sean 1 necesitaremos de la ayuda de otro bit para poder representar el numero 2 en binario (10), a este bit auxiliar le llamaremos \textit{bit de acarreo} o \textit{carry}.
 
 \begin{figure}[h!]
 \centering
@@ -68,7 +70,7 @@ Después de esto, surgió la idea de crear un circuito que se dedicara únicamen
 \section*{Memorizando bits}
 Hasta este punto ya disponemos de los elementos básicos que nos permitirán refinar nuestros circuitos a tal grado de que ya podamos darle solución a una gran cantidad de problemas, permitiéndonos hacer nuestros primeros cómputos de manera digital, pero seguimos teniendo un inconveniente y es que, aún no tenemos un dispositivo capaz de mantener o \textit{almacenar} esa información en algún sitio. Producto de esa búsqueda se desarrolló lo que hoy en día conocemos como \textit{flip-flop} o biestable, pero antes de hablar de ellos expliquemos un concepto muy importante para entenderlos, el concepto de \textit{clock} o \textit{señal de reloj}.
 
-Un \textit{clock} sigue siendo una señal binaria que solo puede tener un valor de 0 o 1, pero con la peculiaridad de que, teóricamente, cambiará sus estados de 0 a 1 y de 1 a 0 \textit{de forma periódica}  y realizando el cambio de forma instantánea. Es decir, imaginemos que queremos que nuestra señal se active en 1 siempre y cuando, la señal rebase una barrera mínima de 5 volts, entonces, si tenemos 4.9 volts o menos recibiremos un 0 y si tenemos 5 volts o más recibiremos un 1. Ahora, imaginemos que nuestra señal cambiará de estado cada segundo, por lo que decimos que tenemos un ancho de pulso de 1 segundo, ya que es lo que dura cada estado. Después, podemos decir que tiene un periodo de 2 segundos, es decir, tarda 2 segundos en volver al mismo estado.
+Un \textit{clock} sigue siendo una señal binaria que solo puede tener un valor de 0 o 1, pero con la peculiaridad de que, cambiará sus estados de 0 a 1 y de 1 a 0 \textit{de forma periódica}. Imaginemos que queremos que nuestra señal se active en 1 siempre y cuando, la señal rebase una barrera mínima de 5 volts, entonces, si tenemos 4.9 volts o menos recibiremos un 0 y si tenemos 5 volts o más recibiremos un 1. Ahora, imaginemos que nuestra señal cambiará de estado cada segundo, así que decimos que tenemos un ancho de pulso de 1 segundo (dura un segundo en 1 y otro segundo en 0).
 
 \begin{figure}[h!]
 \centering
@@ -80,17 +82,33 @@ Representación de una señal de reloj.}
 
 A las transiciones de estados de 0 a 1 le llamaremos \textit{flanco de subida} y a las transiciones de 1 a 0 le llamaremos \textit{flanco de bajada}, posteriormente podremos configurar nuestros dispositivos para que funcionen detectando una u otra.
 
-Ahora sí, podemos pasar a explicar qué son los \textit{flip-flop's}. Estos siguen siendo dispositivos construidos a partir de compuertas lógicas que tienen un detalle especial ya que recibe una retroalimentación en su construcción interna lo que condiciona sus salidas y mantiene su valor anterior. Veamos primero el caso más sencillo que es el flip flop \textit{tipo D}, este flip flop es muy sencillo, pero muy importante ya que a partir de este concepto se construyeron otros más complejos. 
+Ahora sí, podemos pasar a explicar qué son los \textit{flip-flop's}. Estos siguen siendo dispositivos construidos a partir de compuertas lógicas, pero tienen un detalle especial ya que recibe una retroalimentación en su construcción interna, lo que condiciona sus salidas y mantiene su valor anterior. Veamos primero el caso más sencillo que es el flip flop \textit{tipo D}, este flip flop es muy sencillo, pero muy importante ya que a partir de este concepto se construyeron otros más complejos. 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[%
-	width=.65 \textwidth]{typeD.png}
+	width=.55 \textwidth]{typeD.png}
 \caption{\label{fig:typeD}
 Construcción de un flip-flop tipo D.}
 \end{figure}
 
-Tenemos 2 entradas, una para nuestro dato (\textit{D}) y otra para la señal de reloj (\textit{CK}). El funcionamiento, que podemos leer de su tabla de verdad, es el siguiente; si la señal de reloj no esta activada, no importa que este en la entrada ya que todo permanecerá sin cambios y en el caso de recibir una señal de reloj, ``copia'' el valor de D en Q. A pesar de parecer un poco trivial el funcionamiento de este dispositivo realmente tenemos un concepto muy importante frente a nuestros ojos, y es que, mientras la señal de reloj no se active de nuevo, mantendremos el estado anterior, es decir, ¡estamos memorizando el dato anterior!
+Tenemos 2 entradas, una para nuestro dato (\textit{D}) y otra para la señal de reloj (\textit{CK}). El funcionamiento, que podemos leer de su tabla de verdad, es el siguiente; si la señal de reloj no esta activada, no importa que este en la entrada ya que todo permanecerá sin cambios y en el caso de recibir una señal de reloj, ``copia'' el valor de D en la salida Q. A pesar de parecer un poco trivial el funcionamiento de este dispositivo realmente tenemos un concepto muy importante frente a nuestros ojos, y es que, mientras la señal de reloj no se active de nuevo, mantendremos el estado anterior, es decir, ¡estamos memorizando el dato anterior!
+
+¿Y qué pasa si quiero almacenar más de un solo bit? Para ello podemos juntar varios flip-flops en una configuración que se conoce como un \textit{registro}. Estos registros irán variando dependiendo de que tipo de flip-flops implementemos y de la forma en que los conectemos entre si, permitiéndonos trabajar con los bits uno por uno (en serie) o con todos al mismo tiempo procesándolos como una cadena de bits (en paralelo), pero cualquiera de las implementaciones parte del concepto fundamental que vimos anteriormente.
+
+Recordemos que los bits en principio no significan nada, solo representan el paso o no de una corriente, somos nosotros quienes los dotamos de significado según la configuración en la que los disponemos; así que podemos guardar estos bits en registros y dividirlos según su función o según lo que representen para nosotros. Lo primero que puede pasar por nuestra mente es crear un registro en donde guardaremos nuestros datos, aquellos bits que representen por ejemplo, números enteros, nuestros caracteres, etc. Todos aquellos bits que representen información importante para nosotros y que se vinculan entre si dentro de nuestros mecanismos digitales, por ello le llamaremos el  \textit{Registro de Datos}. Después, podemos pensar en crear un registro especial donde guardaremos nuestras instrucciones de como vamos a operar con los datos y que vamos a hacer con ellos, básicamente el lugar donde guardaremos aquellos bits que controlen las ejecución a realizar dentro de nuestro circuito, por ello le llamaremos \textit{registro de Instrucciones }. Sin olvidar que necesitaremos de un registro que almacene aquellas direcciones a seguir para llegar al lugar correcto de nuestro circuito y efectuar las instrucciones correctas con los datos correctos, una especie de via de conexión entre ambos, a estre registro le llamaremos \textit{registro de direcciones de memoria}.
+
+Estos solo son unos pocos ejemplos de los registros que se implementan, pero por ahora mencionaremos solo esos 3 para explicar el concepto esencial.
+
+\section*{Ensamblando todas las piezas}
+
+Recordemos que uno de los motivos principales del desarrollo de la electrónica y, posteriormente, el de la computación; fue el automatizar nuestros cómputos o cálculos y además, encontrar la manera de codificar de alguna forma las capacidades de la mente humana. Así que era valido preguntarse si existía alguna manera de plasmar algo similar a nuestro cerebro llevado al ambiente digital, algo así como un cerebro a base de bits.
+
+Todo parecía indicar a que ya teníamos todas las piezas necesarias, comenzábamos a plasmar nuestras abstracciones matemáticas en dispositivos electrónicos, encontramos la forma de llevar el concepto de la memoria al mundo digital y comenzábamos a trabajar realmente con información. ¿Qué era lo que nos faltaba? 
+
+Una forma de conectar y controlar todo. De aquí es de donde nace el concepto de la \textit{unidad de control}. Esta pieza de lo que se encarga es de buscar las instrucciones que nos indicarán como manipular la información y a continuación, se encargará de decodificarlas o \textit{interpretarlas} asegurándose de que nuestro sistema ejecute dicha instrucción,  algo así como el supervisor de nuestra maquinaria digital. Esto se puede lograr creando circuitos eléctricos que describan una secuencia o proceso a realizar con los datos cuando se presenten las instrucciones (circuitos secuenciales). 
+
+Ahora, ya tenemos nuestras piezas fundamentales de nuestro ``cerebro digital'', disponemos de una unidad que se encarga de realizar todas las operaciones lógicas y aritméticas (\textit{ALU}), de otra unidad que se encarga de almacenar la información en forma de bits y retenerla hasta que la requiramos (\textit{Registros}) y tenemos a nuestro elemento principal que se encargará de supervisar que todas las piezas de nuestro mecanismo funcionan correctamente y logren comunicarse entre si (\textit{Unidad de Control}) y juntando todo esto, tenemos los 3 pilares fundamentales de lo que hoy en día conocemos como \textit{CPU} por sus siglas en inglés de \textit{Central Processing Unit}. Esta pieza en su conjunto es la encargada de realizar todo el trabajo duro, realiza todos nuestros cálculos y nos brinda la posibilidad de experimentar con aquel poder computacional con el que nuestras mentes humanas y limitadas solo podían soñar.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
