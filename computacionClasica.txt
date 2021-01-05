@@ -13,7 +13,7 @@
 \maketitle
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-    La computación cuántica es un campo que esta en constante crecimiento y cada vez observamos a nuevos entes tecnológicos unirse a la carrera por la supremacía cuántica, además de traer consigo una enorme oleada de jóvenes interesados por este campo. Por ello, comenzaremos nuestra aventura en esta área del conocimiento explicando algunos de los conceptos básicos de nuestra ya conocida \textit{computación clásica}, de manera que nos coloquemos en el mismo punto de partida en el cual sepamos qué es un bit, cómo hace un computador para interpretarlos, qué es una memoria y como funciona, etc. Tocando cada uno de los puntos esenciales que sirvieron como antecedentes para dar paso a la revolución de la información en la que vivimos hoy en día y adentrarnos dentro del nuevo mundo de la computación cuántica.
+    La computación cuántica es un campo que esta en constante crecimiento y cada vez observamos nuevos entes tecnológicos unirse a la carrera cuántica, además de traer consigo una enorme oleada de jóvenes interesados por este campo. Por ello, comenzaremos nuestra aventura en esta área del conocimiento explicando algunos de los conceptos básicos de nuestra ya conocida \textit{computación clásica}, de manera que nos coloquemos en el mismo punto de partida en el cual sepamos qué es un bit, cómo hace un computador para interpretarlos, qué es una memoria y como funciona. Tocando cada uno de los puntos esenciales que sirvieron como antecedentes para dar paso a la revolución de la información en la que vivimos hoy en día y adentrarnos dentro del nuevo mundo de la computación cuántica.
     
 \end{abstract}
 \section*{Un mundo de bits}
@@ -32,14 +32,16 @@ Bueno, para nuestra suerte ya se había desarrollado lo que hoy en día conocemo
 
 Por ahora, nos concentraremos en sus aplicaciones en electrónica. Tenemos compuertas muy conocidas como la AND, la cual realiza una conjunción lógica o, el equivalente en el español, el uso de la preposición ``Y''; la compuerta OR que realiza una disyunción lógica o un equivalente a nuestra preposición ``O'', la compuerta NOT que invierte el valor de entrada, entre otras.
 
-De todas las compuertas lógicas existe una con una propiedad muy particular, siendo esta la compuerta \textbf{NAND}, la cual se puede visualizar como una compuerta AND seguida de una compuerta NOT, o sea, una AND con las salidas invertidas. Podrás preguntarte, ¿qué hace tan interesante a esta compuerta? Bueno, resulta que tiene la maravillosa propiedad de que a partir de una combinación de varias de estas podemos construir cualquiera de las otras compuertas lógicas. A esta propiedad se le suele llamar ``Functional completeness'' o de ``Completitud funcional''. Lo que implica que podremos construir cualquier función lógica utilizando únicamente esta compuerta. Y eso no es todo, también implica que solo tenemos que encontrar la forma de construir un dispositivo físico que logre replicar su comportamiento para, posteriormente, replicar dentro de nuestros dispositivos cualquier función lógica que imaginemos.
+De todas las compuertas lógicas existe una con una propiedad muy particular, siendo esta la compuerta \textbf{NAND}, la cual se puede visualizar como una compuerta AND seguida de una compuerta NOT, o sea, una AND con las salidas invertidas. Podrás preguntarte, ¿qué hace tan interesante a esta compuerta? Bueno, resulta que tiene la maravillosa propiedad de que a partir de una combinación de varias de estas podemos construir cualquiera de las otras compuertas lógicas.
+\textbf{A esta propiedad se le suele llamar ``Functional completeness'' o de ``Completitud funcional''. Lo que implica que podremos construir cualquier función lógica utilizando únicamente esta compuerta.}
+Y eso no es todo, también implica que solo tenemos que encontrar la forma de construir un dispositivo físico que logre replicar su comportamiento para, posteriormente, replicar dentro de nuestros dispositivos cualquier función lógica que imaginemos.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[%
 	width=.65 \textwidth]{NAND.jpg}
 \caption{\label{fig:NAND}
-Construcción del resto de compuertas lógicas utilizando compuertas NAND.}
+Construcción del resto de compuertas lógicas utilizando compuertas NAND. (Imagen tomada de: electronics-tutorials.ws)}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -56,14 +58,14 @@ En un sumador por ejemplo, se trata de replicar el comportamiento de una suma bi
 \includegraphics[%
 	width=.5 \textwidth]{mediosumador.png}
 \caption{\label{fig:HaldAdd}
-Construcción de un \textit{medio sumador} usando compuertas lógicas.}
+Construcción de un \textit{medio sumador} usando compuertas lógicas. (Imagen tomada de: compilandoconocimiento.com)}
 \includegraphics[%
 	width=.5 \textwidth]{mediorestador.png}
 \caption{\label{fig:HalfSub}
-Construcción de un \textit{medio restador} utilizando compuertas lógicas.}
+Construcción de un \textit{medio restador} utilizando compuertas lógicas. (Imagen tomada de: compilandoconocimiento.com)}
 \end{figure}
 
-Hecho esto, ya podemos operar con bits de una manera muy similar a como operamos con números. Estamos haciendo operaciones matemáticas manipulando la corriente eléctrica o, en su nivel más fundamental, manipulando electrones.
+\textbf{Hecho esto, ya podemos operar con bits de una manera muy similar a como operamos con números. Estamos haciendo operaciones matemáticas manipulando la corriente eléctrica } o, en su nivel más fundamental, manipulando electrones.
 
 Después de esto, surgió la idea de crear un circuito que se dedicara únicamente de realizar estas operaciones lógicas y matemáticas, funcionando como la pieza fundamental de nuestro ``cerebro'' electrónico. Y a este circuito se le dio el nombre de \textbf{ALU} (por sus siglas en inglés de Arithmetic Logic Unit).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -77,7 +79,7 @@ Un \textit{clock} sigue siendo una señal binaria que solo puede tener un valor 
 \includegraphics[%
 	width=.65 \textwidth]{clock.png}
 \caption{\label{fig:clock}
-Representación de una señal de reloj.}
+Representación de una señal de reloj. \\ (Imagen tomada de: set-up.es)}
 \end{figure}
 
 A las transiciones de estados de 0 a 1 le llamaremos \textit{flanco de subida} y a las transiciones de 1 a 0 le llamaremos \textit{flanco de bajada}, posteriormente podremos configurar nuestros dispositivos para que funcionen detectando una u otra.
@@ -89,10 +91,10 @@ Ahora sí, podemos pasar a explicar qué son los \textit{flip-flop's}. Estos sig
 \includegraphics[%
 	width=.55 \textwidth]{typeD.png}
 \caption{\label{fig:typeD}
-Construcción de un flip-flop tipo D.}
+Construcción de un flip-flop tipo D. (Imagen tomada de: learnabout-electronics.org)}
 \end{figure}
 
-Tenemos 2 entradas, una para nuestro dato (\textit{D}) y otra para la señal de reloj (\textit{CK}). El funcionamiento, que podemos leer de su tabla de verdad, es el siguiente; si la señal de reloj no esta activada, no importa que este en la entrada ya que todo permanecerá sin cambios y en el caso de recibir una señal de reloj, ``copia'' el valor de D en la salida Q. A pesar de parecer un poco trivial el funcionamiento de este dispositivo realmente tenemos un concepto muy importante frente a nuestros ojos, y es que, mientras la señal de reloj no se active de nuevo, mantendremos el estado anterior, es decir, ¡estamos memorizando el dato anterior!
+Tenemos 2 entradas, una para nuestro dato (\textit{D}) y otra para la señal de reloj (\textit{CK}). El funcionamiento, que podemos leer de su tabla de verdad, es el siguiente; si la señal de reloj no esta activada, no importa que este en la entrada ya que todo permanecerá sin cambios y en el caso de recibir una señal de reloj, ``copia'' el valor de D en la salida Q. \textbf{A pesar de parecer un poco trivial el funcionamiento de este dispositivo realmente tenemos un concepto muy importante frente a nuestros ojos, y es que, mientras la señal de reloj no se active de nuevo, mantendremos el estado anterior, es decir, ¡estamos memorizando el dato anterior!}
 
 ¿Y qué pasa si quiero almacenar más de un solo bit? Para ello podemos juntar varios flip-flops en una configuración que se conoce como un \textit{registro}. Estos registros irán variando dependiendo de que tipo de flip-flops implementemos y de la forma en que los conectemos entre si, permitiéndonos trabajar con los bits uno por uno (en serie) o con todos al mismo tiempo procesándolos como una cadena de bits (en paralelo), pero cualquiera de las implementaciones parte del concepto fundamental que vimos anteriormente.
 
@@ -108,7 +110,11 @@ Todo parecía indicar a que ya teníamos todas las piezas necesarias, comenzába
 
 Una forma de conectar y controlar todo. De aquí es de donde nace el concepto de la \textit{unidad de control}. Esta pieza de lo que se encarga es de buscar las instrucciones que nos indicarán como manipular la información y a continuación, se encargará de decodificarlas o \textit{interpretarlas} asegurándose de que nuestro sistema ejecute dicha instrucción,  algo así como el supervisor de nuestra maquinaria digital. Esto se puede lograr creando circuitos eléctricos que describan una secuencia o proceso a realizar con los datos cuando se presenten las instrucciones (circuitos secuenciales). 
 
-Ahora, ya tenemos nuestras piezas fundamentales de nuestro ``cerebro digital'', disponemos de una unidad que se encarga de realizar todas las operaciones lógicas y aritméticas (\textit{ALU}), de otra unidad que se encarga de almacenar la información en forma de bits y retenerla hasta que la requiramos (\textit{Registros}) y tenemos a nuestro elemento principal que se encargará de supervisar que todas las piezas de nuestro mecanismo funcionan correctamente y logren comunicarse entre si (\textit{Unidad de Control}) y juntando todo esto, tenemos los 3 pilares fundamentales de lo que hoy en día conocemos como \textit{CPU} por sus siglas en inglés de \textit{Central Processing Unit}. Esta pieza en su conjunto es la encargada de realizar todo el trabajo duro, realiza todos nuestros cálculos y nos brinda la posibilidad de experimentar con aquel poder computacional con el que nuestras mentes humanas y limitadas solo podían soñar.
+Ahora, ya tenemos nuestras piezas fundamentales de nuestro ``cerebro digital'', disponemos de una unidad que se encarga de realizar todas las operaciones lógicas y aritméticas (\textit{ALU}), de otra unidad que se encarga de almacenar la información en forma de bits y retenerla hasta que la requiramos (\textit{Registros}) y tenemos a nuestro elemento principal que se encargará de supervisar que todas las piezas de nuestro mecanismo funcionan correctamente y logren comunicarse entre si (\textit{Unidad de Control}) y juntando todo esto,
+
+\textbf{tenemos los 3 pilares fundamentales de lo que hoy en día conocemos como CPU por sus siglas en inglés de Central Processing Unit}.
+
+Esta pieza en su conjunto es la encargada de realizar todo el trabajo duro, realiza todos nuestros cálculos y nos brinda la posibilidad de experimentar con aquel poder computacional con el que nuestras mentes humanas y limitadas solo podían soñar.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
